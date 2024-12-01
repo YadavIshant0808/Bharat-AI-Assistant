@@ -101,7 +101,7 @@ Bharat AI Assistant is an innovative and intelligent voice assistant designed to
 ## **Author**
 
 **Name**: Bharat AI Development Team  
-**Contact**: [GitHub](https://github.com/YadavIShant0808) | [LinkedIn](https://linkedin.com/in/YourLinkedIn)  
+**Contact**: [GitHub](https://github.com/YadavIShant0808) | [LinkedIn](https://in.linkedin.com/in/ishant-yadav-335716308)  
 **Languages Used**: Python (98%)  
 **Supporting Libraries**:
 - `os` for system operations.
@@ -116,4 +116,4 @@ Bharat AI Assistant is an innovative and intelligent voice assistant designed to
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourGitHub/bharat-ai-assistant.git
+   git clone https://github.com/YadavIshant0808/Bharat-AI-Assistant.git
