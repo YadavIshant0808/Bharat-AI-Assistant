@@ -1,1 +1,24 @@
-pywhatkit
+# Core Libraries
+pywhatkit==5.4   # For handling tasks like playing YouTube videos, sending WhatsApp messages, etc.
+SpeechRecognition==3.9.0  # For voice recognition and microphone input
+
+# AI and NLP Libraries
+transformers==4.34.0  # For advanced natural language processing
+ai21==1.1.0  # AI21 Studio's API for natural language generation
+
+# Text-to-Speech Libraries
+pyttsx3==2.90  # Offline text-to-speech conversion
+gTTS==2.3.3  # Google Text-to-Speech library
+
+# Weather and News APIs
+requests==2.31.0  # To make API calls for fetching weather and news
+
+# Translation
+googletrans==4.0.0-rc1  # Google Translate API for multilingual support
+
+# Utilities
+pillow==9.3.0  # For handling screenshots and image manipulations
+
+# Miscellaneous
+pyaudio==0.2.13  # For microphone access (ensure you have portaudio installed)
+openai==0.27.8  # For GPT-based functionalities if needed
