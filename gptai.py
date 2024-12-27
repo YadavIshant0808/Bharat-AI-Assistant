@@ -1,18 +1,15 @@
+from speech import say
 import os
-from speech import say  # Ensure this module exists and works as expected
-from ai21 import AI21Client
-from ai21.models.chat import ChatMessage
-from config import api_key  # Assuming API key is stored in config.py as "apikey"
+from config import api_key
+import google.generativeai as genai
 
-# Validate API key
-if not api_key:
-    raise ValueError("API key is missing. Please set it in config.py.")
 
-# Initialize the Bharat A.I. client
-try:
-    client = AI21Client(api_key=api_key)  # Updated client initialization
-except Exception as e:
-    raise RuntimeError(f"Failed to initialize AI client: {e}")
+# Ensure the AI21 API Key is set in the environment variables
+API_KEY = api_key
+if not API_KEY:
+    raise ValueError("API key not found. Set AI21_API_KEY as an environment variable.")
+
+
 
 def ai(prompt):
     """
@@ -21,26 +18,17 @@ def ai(prompt):
         prompt (str): The input prompt to the AI.
     """
     try:
-        # Format prompt into a conversation message
-        messages = [ChatMessage(content=prompt, role="user")]
-
+    
+        # Send the request to gemini  API
+        genai.configure(api_key=API_KEY)
+        model = genai.GenerativeModel("gemini-1.5-flash")
         # Send the request to Bharat A.I. API
-        response_stream = client.chat.completions.create(
-            messages=messages,
-            model="jamba-1.5-mini",  # Ensure the model name is correct
-            stream=True  # Enable streaming for better performance
-        )
+        response_stream = model.generate_content(prompt)
 
         # Collect the AI's response
         text = f"Bharat A.I. response for Prompt: {prompt} \n *************************\n\n"
         response_text = ""
-
-        for chunk in response_stream:
-            # Safely extract content from the streamed response
-            content = chunk.choices[0].delta.content
-            if content:  # Skip if content is None
-                response_text += content
-
+        response_text += response_stream
         text += response_text
 
         # Create a directory for saving responses, if it doesn't exist

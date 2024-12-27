@@ -13,7 +13,7 @@ responses = [
     ["who are you", "I'm an AI assistant here to help you with your queries."],
     ["how can you help me", "I can assist with answering questions, opening programs, and much more!"],
     ["tell me  joke", rj],
-    ["tell me  joke of the day", jod],
+    ["tell me programming joke", jod],
     ["tell me programing joke", pj],
     ["tell me dad joke", dj],
     ["good morning", "Good morning! How can I help you today?"],
